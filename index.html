@@ -3,242 +3,153 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="WeiqiXiao 的个人简介、实习经历、科研经历和比赛经历">
-  <title>WeiqiXiao</title>
+  <meta name="description" content="肖伟祺的个人简介、实习经历、科研经历和比赛经历">
+  <title>肖伟祺（广州大学 网络空间安全学院 本科生）</title>
   <style>
-  html { color-scheme: light dark; }
-  body { margin: 0; }
-
-  #weiqixiao-homepage {
-    --site-paper: light-dark(#fcfbf8, #151b23);
-    --site-top: light-dark(#f5f7f8, #1b2430);
-    --site-ink: light-dark(#172637, #edf2f8);
-    --site-soft-ink: light-dark(#475668, #b4c1d0);
-    --site-blue: light-dark(#2c517a, #a0c8f2);
-    --site-rule: light-dark(#dce2e7, #354352);
-    --site-highlight: light-dark(#e9eff5, #233548);
-    border-top: 3px solid var(--site-blue);
-    background: var(--site-paper);
-    color: var(--site-ink);
-    font: 15px/1.65 system-ui, "Microsoft YaHei", sans-serif;
-    text-align: left;
-  }
-
-  #weiqixiao-homepage *, #weiqixiao-homepage *::before {
-    box-sizing: border-box;
-  }
-
-  #weiqixiao-homepage .page-width {
-    width: min(100% - 64px, 800px);
-    margin-inline: auto;
-  }
-
-  #weiqixiao-homepage .site-header {
-    background: var(--site-top);
-    border-bottom: 1px solid var(--site-rule);
-  }
-
-  #weiqixiao-homepage .header-inner {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 24px;
-    min-height: 62px;
-  }
-
-  #weiqixiao-homepage a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  #weiqixiao-homepage a:hover {
-    color: var(--site-blue);
-    text-decoration: underline;
-    text-underline-offset: 0.24em;
-  }
-
-  #weiqixiao-homepage .wordmark {
-    grid-column: 1;
-    grid-row: 1;
-    font-weight: 650;
-  }
-
-  #weiqixiao-homepage .repository {
-    grid-column: 3;
-    grid-row: 1;
-    padding: 6px 10px;
-    border: 1px solid var(--site-rule);
-    border-radius: 5px;
-    color: var(--site-blue);
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  #weiqixiao-homepage nav {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0 16px;
-    font-size: 13px;
-  }
-
-  #weiqixiao-homepage nav a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 36px;
-    white-space: nowrap;
-  }
-
-  #weiqixiao-homepage main {
-    padding-bottom: 22px;
-  }
-
-  #weiqixiao-homepage .intro {
-    padding-block: clamp(30px, 6vw, 54px) clamp(26px, 5vw, 42px);
-  }
-
-  #weiqixiao-homepage .eyebrow {
-    color: var(--site-blue);
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  #weiqixiao-homepage .eyebrow span {
-    margin-left: 5px;
-    letter-spacing: 0.07em;
-    font-weight: 500;
-  }
-
-  #weiqixiao-homepage h1 {
-    margin: 6px 0 8px;
-    color: var(--site-ink);
-    font: 400 clamp(37px, 7vw, 59px)/1.08 Georgia, "Times New Roman", serif;
-    letter-spacing: -0.035em;
-  }
-
-  #weiqixiao-homepage .entry {
-    display: grid;
-    grid-template-columns: minmax(125px, 0.8fr) minmax(0, 2fr);
-    align-items: start;
-    gap: 20px;
-    padding-block: 19px;
-    border-top: 1px solid var(--site-rule);
-  }
-
-  #weiqixiao-homepage section:target {
-    background: var(--site-highlight);
-  }
-
-  #weiqixiao-homepage h2 {
-    margin: 0;
-    color: var(--site-ink);
-    font: 650 18px/1.5 system-ui, "Microsoft YaHei", sans-serif;
-  }
-
-  #weiqixiao-homepage p {
-    margin: 0;
-  }
-
-  #weiqixiao-homepage .intro p + p,
-  #weiqixiao-homepage .internship + .internship {
-    margin-top: 12px;
-  }
-
-  #weiqixiao-homepage .internship h3 {
-    margin: 0;
-    color: var(--site-ink);
-    font: 650 14px/1.65 system-ui, "Microsoft YaHei", sans-serif;
-  }
-
-  #weiqixiao-homepage .translation,
-  #weiqixiao-homepage .entry-detail {
-    color: var(--site-soft-ink);
-    font-size: 13px;
-  }
-
-  #weiqixiao-homepage .field-labels {
-    color: var(--site-ink);
-    font-size: 14px;
-  }
-
-  #weiqixiao-homepage .entry-detail {
-    margin-top: 3px;
-  }
-
-  @media (max-width: 680px) {
-    #weiqixiao-homepage .page-width { width: calc(100% - 36px); }
-    #weiqixiao-homepage .header-inner {
-      grid-template-columns: 1fr auto;
-      gap: 0 12px;
-      padding-block: 8px 0;
+    :root {
+      color-scheme: light;
+      --ink: #40464b;
+      --muted: #5e666d;
+      --rule: #e8eaec;
+      --link: #31597a;
+      background: #fff;
+      color: var(--ink);
+      font: 17px/1.75 system-ui, "Microsoft YaHei", sans-serif;
     }
-    #weiqixiao-homepage .repository { grid-column: 2; }
-    #weiqixiao-homepage nav {
-      grid-column: 1 / -1;
-      grid-row: 2;
-      justify-content: flex-start;
-      gap: 0 10px;
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: var(--link); text-underline-offset: .25em; }
+
+    .page-width {
+      width: min(100% - 80px, 1260px);
+      margin-inline: auto;
     }
-  }
 
-  @media (max-width: 420px) {
-    #weiqixiao-homepage .entry {
-      grid-template-columns: 1fr;
-      gap: 5px;
-      padding-block: 15px;
+    .site-header { border-bottom: 1px solid var(--rule); }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      min-height: 70px;
     }
-    #weiqixiao-homepage .entry h2,
-    #weiqixiao-homepage .translation { display: inline; }
-    #weiqixiao-homepage .translation { margin-left: 8px; }
-  }
 
-  @media (pointer: coarse) {
-    #weiqixiao-homepage nav a,
-    #weiqixiao-homepage .repository { min-height: 44px; }
-    #weiqixiao-homepage .repository { display: inline-flex; align-items: center; gap: 4px; }
-  }
-
-  #weiqixiao-homepage {
-    min-height: 100vh;
-  }
-
-  #weiqixiao-homepage .intro {
-    display: flow-root;
-  }
-
-  #weiqixiao-homepage .portrait {
-    float: right;
-    width: clamp(104px, 22%, 152px);
-    height: auto;
-    margin: 0 0 12px 24px;
-    border: 1px solid var(--site-rule);
-    border-radius: 6px;
-  }
-
-  @media (max-width: 420px) {
-    #weiqixiao-homepage .portrait {
-      width: 88px;
-      margin-left: 14px;
+    .site-header a { color: inherit; text-decoration: none; }
+    .site-header a:hover { text-decoration: underline; }
+    .site-header .wordmark {
+      padding-block: 17px 13px;
+      border-bottom: 2px solid currentColor;
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
     }
-  }
 
-  #weiqixiao-homepage .experience-list {
-    margin: 0;
-    padding-inline-start: 1.2em;
-  }
+    .site-header nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 24px;
+      font-size: 15px;
+    }
 
-  #weiqixiao-homepage .experience-list li + li {
-    margin-top: 8px;
-  }
+    .site-header nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .site-header .repository {
+      margin-inline-start: auto;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .page-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(36px, 6vw, 72px);
+      padding-block: 44px 64px;
+    }
+
+    .profile {
+      align-self: start;
+      position: sticky;
+      top: 32px;
+    }
+
+    .portrait {
+      display: block;
+      width: min(100%, 192px);
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center 35%;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+    }
+
+    .profile-name {
+      margin: 14px 0 2px;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .profile-affiliation {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    main { min-width: 0; overflow-wrap: anywhere; }
+    main section { scroll-margin-top: 24px; }
+
+    h1, h2, h3 { line-height: 1.35; }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(27px, 2.8vw, 38px);
+    }
+
+    .intro p { margin: 0 0 14px; }
+    .intro p:last-child { margin-bottom: 0; }
+
+    .entry { margin-top: 32px; }
+    .entry h2 {
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 25px;
+    }
+
+    .internship + .internship { margin-top: 14px; }
+    .internship h3 { margin: 0; font-size: 17px; }
+    .entry-detail { margin: 3px 0 0; color: var(--muted); font-size: 15px; }
+    .experience-list { margin: 0; padding-inline-start: 1.35em; }
+    .experience-list li + li { margin-top: 8px; }
+
+    @media (max-width: 900px) {
+      .page-width { width: calc(100% - 48px); }
+      .page-layout { grid-template-columns: 156px minmax(0, 1fr); gap: 32px; }
+      .header-inner, .site-header nav { column-gap: 18px; }
+    }
+
+    @media (max-width: 680px) {
+      :root { font-size: 16px; }
+      .page-width { width: calc(100% - 36px); }
+      .header-inner { flex-wrap: wrap; gap: 0 14px; }
+      .site-header nav { order: 1; flex-basis: 100%; column-gap: 16px; }
+      .page-layout { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-block: 24px 36px; }
+      .profile { position: static; display: flex; align-items: center; gap: 16px; }
+      .portrait { width: 100px; flex: none; }
+      .profile-name { margin-top: 0; }
+      h1 { font-size: 26px; }
+      .entry h2 { font-size: 22px; }
+    }
   </style>
 </head>
 <body>
-<div id="weiqixiao-homepage">
   <header class="site-header">
     <div class="page-width header-inner">
-      <a class="wordmark" href="#wx-intro">WeiqiXiao</a>
+      <a class="wordmark" href="#wx-intro">肖伟祺</a>
       <a class="repository" href="https://github.com/Xiao666690/xiao666690.github.io" target="_blank" rel="noopener noreferrer">GitHub 仓库 <span aria-hidden="true">↗</span></a>
       <nav aria-label="首页栏目">
         <a href="#wx-intro">个人简介</a>
@@ -249,68 +160,66 @@
     </div>
   </header>
 
-  <main class="page-width">
-    <section id="wx-intro" class="intro" aria-labelledby="wx-name">
+  <div class="page-width page-layout">
+    <aside class="profile" aria-label="个人信息">
       <img class="portrait" src="profile.jpg" alt="肖伟祺的个人照片" width="360" height="440">
-      <div class="eyebrow">个人简介 <span lang="en">/ ABOUT</span></div>
-      <h1 id="wx-name">WeiqiXiao</h1>
-      <p>我是一名广州大学网络空间安全专业的本科生，在校期间：加权平均分为 <strong>91.3/100</strong>，在校排名 <strong>3/148</strong>。修读课程：概率论 （100 分）、离散数学（ 99 分）、密码学 （98 分）、线性代数（ 97 分）、高数 I2（ 95 分）、高数（ I1 92 分）、计算机网络（92分）、计算机组成原理（92分）、数据结构与算法（88分）、操作系统原理（87分）</p>
-      <p>我目前担任<strong>杨建业教授课题组本科生团队负责人</strong>，参与相关课题研究与多项<strong>AI Agent（智能体）开发</strong>相关项目，目前带领团队获得：<strong>TCSVT</strong>期刊（SCI 一区，二作，在投）、<strong>&nbsp;CVPR</strong> 会议（CCF-A,二作,在投）、<strong>CCPE期刊</strong>（SCI 四区，二作，在投）、IEEE 会议论文 4篇、国家发明专利1份、计算机软件专著权3份。</p>
-    </section>
-
-    <section id="wx-internships" class="entry" aria-labelledby="wx-internship-title">
       <div>
+        <p class="profile-name">Weiqi Xiao</p>
+        <p class="profile-affiliation">广州大学网络空间安全学院</p>
+      </div>
+    </aside>
+
+    <main>
+      <section id="wx-intro" class="intro" aria-labelledby="wx-name">
+        <h1 id="wx-name">肖伟祺（广州大学 网络空间安全学院 本科生）</h1>
+        <p>我是一名广州大学网络空间安全专业的本科生，在校期间：加权平均分为 <strong>91.3/100</strong>，在校排名 <strong>3/148</strong>。修读课程：概率论 （100 分）、离散数学（ 99 分）、密码学 （98 分）、线性代数（ 97 分）、高数 I2（ 95 分）、高数（ I1 92 分）、计算机网络（92分）、计算机组成原理（92分）、数据结构与算法（88分）、操作系统原理（87分）</p>
+        <p>我目前担任<strong>杨建业教授课题组本科生团队负责人</strong>，参与相关课题研究与多项<strong>AI Agent（智能体）开发</strong>相关项目，目前带领团队获得：<strong>TCSVT</strong>期刊（SCI 一区，二作，在投）、<strong>&nbsp;CVPR</strong> 会议（CCF-A,二作,在投）、<strong>CCPE期刊</strong>（SCI 四区，二作，在投）、IEEE 会议论文 4篇、国家发明专利1份、计算机软件专著权3份。</p>
+      </section>
+
+      <section id="wx-internships" class="entry" aria-labelledby="wx-internship-title">
         <h2 id="wx-internship-title">实习经历</h2>
-        <p class="translation" lang="en">Internships</p>
-      </div>
-      <div class="entry-body">
-        <article class="internship">
-          <h3>视源电子科技股份有限公司 | 供应链多 Agent 运营智能系统 | Agent 开发实习生</h3>
-          <p class="entry-detail"><time datetime="2026-09">2026.09</time> - <time datetime="2026-11">2026.11</time></p>
-        </article>
-        <article class="internship">
-          <h3>厦门海莱照明有限公司 |企业智能权限申请 Agent 系统 | Agent 开发实习生</h3>
-          <p class="entry-detail"><time datetime="2026-05">2026.05</time> - <time datetime="2026-08">2026.08</time></p>
-        </article>
-      </div>
-    </section>
+        <div class="entry-body">
+          <article class="internship">
+            <h3>视源电子科技股份有限公司 | 供应链多 Agent 运营智能系统 | Agent 开发实习生</h3>
+            <p class="entry-detail"><time datetime="2026-09">2026.09</time> - <time datetime="2026-11">2026.11</time></p>
+          </article>
+          <article class="internship">
+            <h3>厦门海莱照明有限公司 |企业智能权限申请 Agent 系统 | Agent 开发实习生</h3>
+            <p class="entry-detail"><time datetime="2026-05">2026.05</time> - <time datetime="2026-08">2026.08</time></p>
+          </article>
+        </div>
+      </section>
 
-    <section id="wx-research" class="entry" aria-labelledby="wx-research-title">
-      <div>
+      <section id="wx-research" class="entry" aria-labelledby="wx-research-title">
         <h2 id="wx-research-title">科研经历</h2>
-        <p class="translation" lang="en">Research</p>
-      </div>
-      <ul class="experience-list">
-        <li>大规模流图上模式匹配分布式处理关键技术研究——杨建业教授课题组省部级项目（参与）</li>
-        <li>一篇 <strong>CVPR</strong> 会议论文（CCF-A，二作，在投）</li>
-        <li>一篇 <strong>TCSVT</strong> 期刊论文（SCI 一区，二作，在投）</li>
-        <li>Efficient Fault-Tolerant Deep Learning Training through Weakly Consistent Checkpointing（<strong>CCPE 期刊</strong>，SCI 四区，二作，在投）</li>
-        <li>一种基于二维本地差分隐私的多变量时间点过程分析方法（国家发明专利）</li>
-        <li>CAOA for Online Expert Adaptation under Preference Staleness（<strong>EIECS</strong> 会议，一作，EI，Best Paper Award）</li>
-        <li>Hybrid-DRAS: Alarm-Authority Auditing and Decision-Preserving Response Reporting（<strong>ISRIMT</strong> 会议，一作，EI，Best Paper Award）</li>
-        <li>ContextReplay-AF: Context-Conditional Historical Replay with Effective Support for Training-Free Time-Series Forecasting（<strong>ISCIC</strong> 会议，二作，EI）</li>
-        <li>Latent Preference Inference and Expert–Crowd Aggregation in Sequential Elimination（<strong>ICSP</strong> 会议，二作，EI）</li>
-        <li>量子算法模拟性能优化工具软件（计算机软件著作权）</li>
-        <li>PaperAgent智能科研辅助平台软件V1.0（计算机软件著作权）</li>
-        <li>跨机构联邦学习任务调度系统（计算机软件著作权）</li>
-      </ul>
-    </section>
+        <ul class="experience-list">
+          <li>大规模流图上模式匹配分布式处理关键技术研究——杨建业教授课题组省部级项目（参与）</li>
+          <li>一篇 <strong>CVPR</strong> 会议论文（CCF-A，二作，在投）</li>
+          <li>一篇 <strong>TCSVT</strong> 期刊论文（SCI 一区，二作，在投）</li>
+          <li>Efficient Fault-Tolerant Deep Learning Training through Weakly Consistent Checkpointing（<strong>CCPE 期刊</strong>，SCI 四区，二作，在投）</li>
+          <li>一种基于二维本地差分隐私的多变量时间点过程分析方法（国家发明专利）</li>
+          <li>CAOA for Online Expert Adaptation under Preference Staleness（<strong>EIECS</strong> 会议，一作，EI，Best Paper Award）</li>
+          <li>Hybrid-DRAS: Alarm-Authority Auditing and Decision-Preserving Response Reporting（<strong>ISRIMT</strong> 会议，一作，EI，Best Paper Award）</li>
+          <li>ContextReplay-AF: Context-Conditional Historical Replay with Effective Support for Training-Free Time-Series Forecasting（<strong>ISCIC</strong> 会议，二作，EI）</li>
+          <li>Latent Preference Inference and Expert–Crowd Aggregation in Sequential Elimination（<strong>ICSP</strong> 会议，二作，EI）</li>
+          <li>量子算法模拟性能优化工具软件（计算机软件著作权）</li>
+          <li>PaperAgent智能科研辅助平台软件V1.0（计算机软件著作权）</li>
+          <li>跨机构联邦学习任务调度系统（计算机软件著作权）</li>
+        </ul>
+      </section>
 
-    <section id="wx-competitions" class="entry" aria-labelledby="wx-competitions-title">
-      <div>
+      <section id="wx-competitions" class="entry" aria-labelledby="wx-competitions-title">
         <h2 id="wx-competitions-title">比赛经历</h2>
-        <p class="translation" lang="en">Competitions</p>
-      </div>
-      <ul class="experience-list">
-        <li>全球人工智能算法精英大赛—AI+软件创新赛道—PaperAgent（广东省省赛一等奖）</li>
-        <li>蓝桥杯大赛—Python方向（广东省省赛一等奖）</li>
-        <li>广州大学大学生创新训练项目——基于岭南文化忠实度约束的大模型价值观对齐评估系统（校级立项）</li>
-        <li>“挑战杯”全国大学生课外学术科技作品竞赛——数盾联盟数据资产共享服务领航者（广州大学校赛铜奖）</li>
-        <li>广州大学第二十届“挑战杯”竞赛——粤韵智标——基于大模型增量学习的多模态粤语语料库智能化构建平台（广州大学校赛一等奖）</li>
-        <li>广州大学校二等奖学金（2024-2025、2025-2026）</li>
-      </ul>
-    </section>
-  </main>
-</div>
+        <ul class="experience-list">
+          <li>全球人工智能算法精英大赛—AI+软件创新赛道—PaperAgent（广东省省赛一等奖）</li>
+          <li>蓝桥杯大赛—Python方向（广东省省赛一等奖）</li>
+          <li>广州大学大学生创新训练项目——基于岭南文化忠实度约束的大模型价值观对齐评估系统（校级立项）</li>
+          <li>“挑战杯”全国大学生课外学术科技作品竞赛——数盾联盟数据资产共享服务领航者（广州大学校赛铜奖）</li>
+          <li>广州大学第二十届“挑战杯”竞赛——粤韵智标——基于大模型增量学习的多模态粤语语料库智能化构建平台（广州大学校赛一等奖）</li>
+          <li>广州大学校二等奖学金（2024-2025、2025-2026）</li>
+        </ul>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
