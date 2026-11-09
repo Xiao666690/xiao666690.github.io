@@ -3,42 +3,267 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WeiqiXiao 的个人简介和实习经历">
   <title>WeiqiXiao</title>
   <style>
-    body {
-      margin: 0;
-      background: #f7f8fc;
-      color: #172033;
-      font: 16px/1.7 system-ui, sans-serif;
+  html { color-scheme: light dark; }
+  body { margin: 0; }
+
+  #weiqixiao-homepage {
+    --site-paper: light-dark(#fcfbf8, #151b23);
+    --site-top: light-dark(#f5f7f8, #1b2430);
+    --site-ink: light-dark(#172637, #edf2f8);
+    --site-soft-ink: light-dark(#475668, #b4c1d0);
+    --site-blue: light-dark(#2c517a, #a0c8f2);
+    --site-rule: light-dark(#dce2e7, #354352);
+    --site-highlight: light-dark(#e9eff5, #233548);
+    border-top: 3px solid var(--site-blue);
+    background: var(--site-paper);
+    color: var(--site-ink);
+    font: 15px/1.65 system-ui, "Microsoft YaHei", sans-serif;
+    text-align: left;
+  }
+
+  #weiqixiao-homepage *, #weiqixiao-homepage *::before {
+    box-sizing: border-box;
+  }
+
+  #weiqixiao-homepage .page-width {
+    width: min(100% - 64px, 800px);
+    margin-inline: auto;
+  }
+
+  #weiqixiao-homepage .site-header {
+    background: var(--site-top);
+    border-bottom: 1px solid var(--site-rule);
+  }
+
+  #weiqixiao-homepage .header-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    min-height: 62px;
+  }
+
+  #weiqixiao-homepage a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #weiqixiao-homepage a:hover {
+    color: var(--site-blue);
+    text-decoration: underline;
+    text-underline-offset: 0.24em;
+  }
+
+  #weiqixiao-homepage .wordmark {
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: 650;
+  }
+
+  #weiqixiao-homepage .repository {
+    grid-column: 3;
+    grid-row: 1;
+    padding: 6px 10px;
+    border: 1px solid var(--site-rule);
+    border-radius: 5px;
+    color: var(--site-blue);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  #weiqixiao-homepage nav {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 16px;
+    font-size: 13px;
+  }
+
+  #weiqixiao-homepage nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    white-space: nowrap;
+  }
+
+  #weiqixiao-homepage main {
+    padding-bottom: 22px;
+  }
+
+  #weiqixiao-homepage .intro {
+    padding-block: clamp(30px, 6vw, 54px) clamp(26px, 5vw, 42px);
+  }
+
+  #weiqixiao-homepage .eyebrow {
+    color: var(--site-blue);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  #weiqixiao-homepage .eyebrow span {
+    margin-left: 5px;
+    letter-spacing: 0.07em;
+    font-weight: 500;
+  }
+
+  #weiqixiao-homepage h1 {
+    margin: 6px 0 8px;
+    color: var(--site-ink);
+    font: 400 clamp(37px, 7vw, 59px)/1.08 Georgia, "Times New Roman", serif;
+    letter-spacing: -0.035em;
+  }
+
+  #weiqixiao-homepage .entry {
+    display: grid;
+    grid-template-columns: minmax(125px, 0.8fr) minmax(0, 2fr);
+    align-items: start;
+    gap: 20px;
+    padding-block: 19px;
+    border-top: 1px solid var(--site-rule);
+  }
+
+  #weiqixiao-homepage section:target {
+    background: var(--site-highlight);
+  }
+
+  #weiqixiao-homepage h2 {
+    margin: 0;
+    color: var(--site-ink);
+    font: 650 18px/1.5 system-ui, "Microsoft YaHei", sans-serif;
+  }
+
+  #weiqixiao-homepage p {
+    margin: 0;
+  }
+
+  #weiqixiao-homepage .intro p + p,
+  #weiqixiao-homepage .internship + .internship {
+    margin-top: 12px;
+  }
+
+  #weiqixiao-homepage .internship h3 {
+    margin: 0;
+    color: var(--site-ink);
+    font: 650 14px/1.65 system-ui, "Microsoft YaHei", sans-serif;
+  }
+
+  #weiqixiao-homepage .translation,
+  #weiqixiao-homepage .entry-detail {
+    color: var(--site-soft-ink);
+    font-size: 13px;
+  }
+
+  #weiqixiao-homepage .field-labels {
+    color: var(--site-ink);
+    font-size: 14px;
+  }
+
+  #weiqixiao-homepage .entry-detail {
+    margin-top: 3px;
+  }
+
+  @media (max-width: 680px) {
+    #weiqixiao-homepage .page-width { width: calc(100% - 36px); }
+    #weiqixiao-homepage .header-inner {
+      grid-template-columns: 1fr auto;
+      gap: 0 12px;
+      padding-block: 8px 0;
     }
-    main { max-width: 720px; margin: 0 auto; padding: 64px 24px; }
-    h1 { margin: 0; font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.1; }
-    a { color: #2449ad; }
-    section { margin-top: 48px; }
-    article {
-      padding: 20px 24px;
-      border: 1px solid #dce2ee;
-      border-radius: 16px;
-      background: white;
+    #weiqixiao-homepage .repository { grid-column: 2; }
+    #weiqixiao-homepage nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-content: flex-start;
+      gap: 0 10px;
     }
-    article h3 { margin: 0; }
+  }
+
+  @media (max-width: 420px) {
+    #weiqixiao-homepage .entry {
+      grid-template-columns: 1fr;
+      gap: 5px;
+      padding-block: 15px;
+    }
+    #weiqixiao-homepage .entry h2,
+    #weiqixiao-homepage .translation { display: inline; }
+    #weiqixiao-homepage .translation { margin-left: 8px; }
+  }
+
+  @media (pointer: coarse) {
+    #weiqixiao-homepage nav a,
+    #weiqixiao-homepage .repository { min-height: 44px; }
+    #weiqixiao-homepage .repository { display: inline-flex; align-items: center; gap: 4px; }
+  }
+
+  #weiqixiao-homepage {
+    min-height: 100vh;
+  }
+
+  #weiqixiao-homepage .intro {
+    display: flow-root;
+  }
+
+  #weiqixiao-homepage .portrait {
+    float: right;
+    width: clamp(104px, 22%, 152px);
+    height: auto;
+    margin: 0 0 12px 24px;
+    border: 1px solid var(--site-rule);
+    border-radius: 6px;
+  }
+
+  @media (max-width: 420px) {
+    #weiqixiao-homepage .portrait {
+      width: 88px;
+      margin-left: 14px;
+    }
+  }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>WeiqiXiao</h1>
-      <p>欢迎来到我的个人主页。我会在这里分享研究和项目。</p>
-      <a href="https://github.com/Xiao666690">GitHub</a>
-    </header>
+<div id="weiqixiao-homepage">
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <a class="wordmark" href="#wx-intro">WeiqiXiao</a>
+      <a class="repository" href="https://github.com/Xiao666690/xiao666690.github.io" target="_blank" rel="noopener noreferrer">GitHub 仓库 <span aria-hidden="true">↗</span></a>
+      <nav aria-label="首页栏目">
+        <a href="#wx-intro">个人简介</a>
+        <a href="#wx-internships">实习经历</a>
+      </nav>
+    </div>
+  </header>
 
-    <section aria-labelledby="projects">
-      <h2 id="projects">精选项目</h2>
-      <article>
-        <h3>你的第一个项目</h3>
-        <p>用一两句话介绍项目解决了什么问题，以及你的贡献。</p>
-      </article>
+  <main class="page-width">
+    <section id="wx-intro" class="intro" aria-labelledby="wx-name">
+      <img class="portrait" src="profile.jpg" alt="肖伟祺的个人照片" width="360" height="440">
+      <div class="eyebrow">个人简介 <span lang="en">/ ABOUT</span></div>
+      <h1 id="wx-name">WeiqiXiao</h1>
+      <p>我是一名广州大学网络空间安全专业的本科生，在校期间：加权平均分为 <strong>91.3/100</strong>，在校排名 <strong>3/148</strong>。修读课程：概率论 （100 分）、离散数学（ 99 分）、密码学 （98 分）、线性代数（ 97 分）、高数 I2（ 95 分）、高数（ I1 92 分）、计算机网络（92分）、计算机组成原理（92分）、数据结构与算法（88分）、操作系统原理（87分）</p>
+      <p>我目前担任<strong>杨建业教授课题组本科生团队负责人</strong>，参与相关课题研究与多项<strong>AI Agent（智能体）开发</strong>相关项目，目前带领团队获得：<strong>TCSVT</strong>期刊（SCI 一区，二作，在投）、<strong>&nbsp;CVPR</strong> 会议（CCF-A,二作,在投）、<strong>CCPE期刊</strong>（SCI 四区，二作，在投）、IEEE 会议论文 4篇、国家发明专利1份、计算机软件专著权3份。</p>
+    </section>
+
+    <section id="wx-internships" class="entry" aria-labelledby="wx-internship-title">
+      <div>
+        <h2 id="wx-internship-title">实习经历</h2>
+        <p class="translation" lang="en">Internships</p>
+      </div>
+      <div class="entry-body">
+        <article class="internship">
+          <h3>视源电子科技股份有限公司 | 供应链多 Agent 运营智能系统 | Agent 开发实习生</h3>
+          <p class="entry-detail"><time datetime="2026-09">2026.09</time> - <time datetime="2026-11">2026.11</time></p>
+        </article>
+        <article class="internship">
+          <h3>厦门海莱照明有限公司 |企业智能权限申请 Agent 系统 | Agent 开发实习生</h3>
+          <p class="entry-detail"><time datetime="2026-05">2026.05</time> - <time datetime="2026-08">2026.08</time></p>
+        </article>
+      </div>
     </section>
   </main>
+</div>
 </body>
 </html>
